@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!--
+ * This file and the BrickBuddy© logo are part of BrickBuddy©,
+ * Copyright© 2023-present.
+ *
+ * BrickBuddy© is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * BrickBuddy© is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY.  
+ * See the GNU General Public License for more details at
+ * <http://www.gnu.org/licenses/>.
+ * 
+ * For support, or to report a bug, write an email at
+ * brickbuddyinfo@gmail.com
+ */
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrickBuddy</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="tables">
+                <div class="wlSection">
+                    <div class="wlCounter">
+                        <span id="WL_Counter"></span>
+                    </div>
+                    <div class="wlTable">
+                        <table id="WL_table">
+                            <tbody id="WL_tbody">
+                                <tr style="background-color: yellow; border-style: solid;">
+                                    <th>Description</th>
+                                    <th>Qty</th>
+                                    <th>BLCode</th>
+                                    <th>Color</th>
+                                    <th>Owned</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="cartsSection">
+                    <div class="cartsCounter">
+                        <span id="Carts_Counter"></span>
+                    </div>
+                    <div class="cartsTable">
+                        <table id="Carts_table">
+                            <tbody id="Carts_tbody">
+                                <tr style="background-color: yellow; border-style: solid;">
+                                    <th>Store</th>
+                                    <th>Feedback</th>
+                                    <th>Country</th>
+                                    <th>Lots</th>
+                                    <th>Cart Total</th>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="wlButtons">
+                    <button id="WL_readBtn" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+                        title="Click to load the data of your Wanted List (only the the items displayed in the current page will be loaded)">
+                        Read Wanted List
+                    </button>
+
+                    <button id="WL_clearBtn" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+                        title="Click to erase all data about your Wanted List(s)">
+                        Delete Wanted Items
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="cartsButtons">
+                    <button id="Carts_readBtn" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+                        title="Click to load the data of the cart displayed in the current page">
+                        Read Cart List
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" id="cart">
+                            <path fill="#444" d="M14 13.1V12H4.6l.6-1.1 9.2-.9L16 4H3.7L3 1H0v1h2.2l2.1 8.4L3 13v1.5c0 .8.7 1.5 1.5 1.5S6 15.3 6 14.5 5.3 13 4.5 13H12v1.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5c0-.7-.4-1.2-1-1.4zM4 5h10.7l-1.1 4-8.4.9L4 5z"></path>
+                        </svg>
+                    </button>
+
+                    <button id="Carts_clearAllBtn" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+                        title="Click to erase all data about your carts">
+                        Erase all carts data
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="generate_btns">
+                    <button id="excelButton" type="button" class="btn btn-secondary btn-output" data-toggle="tooltip" data-placement="top" 
+                        title="Click to generate an Excel file with the summary of your Bricklink orders">
+                        Generate Excel
+                    </button>
+
+                    <button id="xmlButton" type="button" class="btn btn-secondary btn-output" data-toggle="tooltip" data-placement="top" 
+                        title="Click to get an XML string to be copied in Bricklink to generate a new Wanted List with the items you still need to buy">
+                        Generate XML Missing Items
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="guide">
+            <div class="logo">
+                <img id="logo" src="images/BB_transparent.png" alt="BrickBuddy by Matteo Sperati" width="150px" height="150px">
+            </div>
+            <div class="infobox">
+                <p id="help"></p>
+            </div>
+        </div>
+        <div class="paypal">
+            <form action="https://www.paypal.com/donate/" method="post" target="_blank">
+                <input type="hidden" name="hosted_button_id" value="VHNZXV3A9PA7Y" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/IT/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" src="https://www.paypal.com/en_IT/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+            <div id="author">
+                <p>BrickBuddy© by Matteo Sperati</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="bundle.js"></script>
+    <script src="serviceCarts.js"></script>
+    <script src="serviceDictionary.js"></script>
+    <script src="serviceExcel.js"></script>
+    <script src="serviceWantedList.js"></script>
+    <script src="serviceXML.js"></script>
+
+</body>
+
+</html>

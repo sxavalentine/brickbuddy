@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "core-js": "^3.30.1",
+    "dom": "^0.0.3",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5",
+    "parser": "^0.1.4",
+    "regenerator": "^0.14.10"
+  }
+}
